@@ -44,15 +44,48 @@ A0 = Y7 + Y5 + Y3 + Y1 <br>
 
 
 ## Program:
+```python
+1. Decoder:
+module exp8a(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c ;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=((~a)&(~b)&(~c));
+assign d1=((~a)&(~b)&c);
+assign d2=((~a)&b&(~c));
+assign d3=((~a)&b&c);
+assign d4=(a&(~b)&(~c));
+assign d5=(a&(~b)&(c));
+assign d6=(a&b&(~c));
+assign d7=(a&b&c);
+endmodule 
+
+
+
+2.Encoder:
+module exp8b(y0,y1,y2,y3,y4,y5,y6,y7,a0,a1,a2);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+assign a0=(y7|y5|y3|y1);
+assign a1=(y7|y6|y3|y2);
+assign a2=(y7|y6|y5|y4);
+endmodule
+```
 
 
 ## RTL Schematic:
+### 1.Decoder:
+![image](https://github.com/harini1006/encoder-decoder/assets/113497405/43b9785a-f421-4dc0-960a-75b2748cdc0c)
+### 2.Encoder:
+![image](https://github.com/harini1006/encoder-decoder/assets/113497405/a2f9e75d-4abc-4421-9116-25006fee07ea)
 
 
 
 
 ## Timing Diagram:
-
+### 1.Decoder:
+![image](https://github.com/harini1006/encoder-decoder/assets/113497405/856c45df-84c9-4f43-bfa5-accb3d473e8a)
+### 2.Encoder:
+![image](https://github.com/harini1006/encoder-decoder/assets/113497405/8a5e2e39-bf05-4a10-9e0e-63b224eabe0e)
 
 
 ## Result:
